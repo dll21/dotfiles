@@ -1,0 +1,7 @@
+require("david.plugins-setup")
+require("david.core.options")
+require("david.core.colorscheme")
+require("david.core.keymaps")
+require("david.plugins.nvim-tree")
+require("david.plugins.lualine")
+require("david.plugins.telescope")
