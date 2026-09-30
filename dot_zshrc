@@ -1,0 +1,30 @@
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+alias ccc="cc -Wall -Werror -Wextra"
+
+# python alias
+alias python=python3
+alias pip="python3 -m pip"
+
+# bun completions
+[ -s "/Users/laporte/.bun/_bun" ] && source "/Users/laporte/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Library/Python/3.14/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/laporte/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions
+
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+bindkey '^ ' autosuggest-accept
